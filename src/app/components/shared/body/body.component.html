@@ -1,0 +1,5 @@
+<div>
+  <app-weather-display *ngIf ="(auth.isAuthenticated$ | async) === true"></app-weather-display>
+  <app-header *ngIf ="(auth.isAuthenticated$ | async) === false"></app-header>
+</div>
+
