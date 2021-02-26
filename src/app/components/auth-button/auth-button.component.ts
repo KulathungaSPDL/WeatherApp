@@ -7,14 +7,16 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-auth-button',
   template: `
-  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+  <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut"><div class = "col mr-auto">
     <button class="btn btn-outline-light" (click)="auth.logout({ returnTo: document.location.origin })">
       Log out
-    </button>
+    </button></div>
   </ng-container>
 
   <ng-template #loggedOut>
+  <div class = "col mr-auto">
     <button class="btn btn-outline-light" (click)="auth.loginWithRedirect()">Log in</button>
+    </div>
   </ng-template>
 `,
   styleUrls: ['./auth-button.component.css']
